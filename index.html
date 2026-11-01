@@ -54,6 +54,7 @@
   .app span { color: var(--text); font-size: 0.95rem; line-height: 1.5; }
   .contact { text-align: center; }
   .contact p { margin: 4px 0; }
+  .contact .entry + .entry { margin-top: 24px; }
   .contact .person { color: var(--bright); }
   .contact .label { color: var(--muted); display: inline-block; min-width: 90px; }
   footer {
@@ -92,8 +93,14 @@
 
   <h2>Contact</h2>
   <div class="contact">
-    <p class="person">Christopher Taus, CTO</p>
-    <p><a href="mailto:ctaus@amphoteb.com">ctaus@amphoteb.com</a></p>
+    <div class="entry">
+      <p class="person">Christopher Taus, Chief Technology Officer</p>
+      <p><a href="mailto:ctaus@heymon.gg">ctaus@heymon.gg</a></p>
+    </div>
+    <div class="entry">
+      <p class="person">Christopher Dunham, Chief Acquisition Officer</p>
+      <p><a href="mailto:cdunham@heymon.gg">cdunham@heymon.gg</a></p>
+    </div>
   </div>
 </main>
 <footer>&copy; 2026 Amphoteb LLC. All rights reserved.</footer>
