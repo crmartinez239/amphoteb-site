@@ -6,76 +6,20 @@
 <title>Amphoteb LLC</title>
 <meta name="description" content="Amphoteb LLC: software for the web, desktop and mobile, plus tech resale.">
 <meta name="theme-color" content="#000000">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400&display=swap" rel="stylesheet">
-<style>
-  /* Light grey on pure black; the logo itself is maroon. */
-  :root {
-    --bg: #000000;
-    --text: #a8a8a8;
-    --bright: #d9d9d9;    /* headings */
-    --muted: #6f6f6f;
-    --line: #1f1f1f;
-    --card: #0b0b0b;
-    --accent: #9b1c31;    /* the logo's maroon */
-    --accent-hi: #c4304a;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
-    font: 300 17px/1.7 "Exo 2", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", sans-serif;
-    display: flex; flex-direction: column; align-items: center;
-  }
-  main { width: 100%; max-width: 640px; padding: 56px 20px 32px; flex: 1; }
-  .logo { display: block; width: 420px; max-width: 90%; height: auto; margin: 0 auto 12px; }
-  .tagline { text-align: center; letter-spacing: 0.04em; color: var(--text); margin: 0 0 56px; }
-  h2 {
-    font-weight: 300; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;
-    color: var(--muted); margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
-    position: relative;
-  }
-  h2::after {
-    content: ""; position: absolute; left: 0; bottom: -1px; width: 40px; height: 2px; background: var(--accent);
-  }
-  ::selection { background: var(--accent); color: #fff; }
-  a { color: var(--bright); text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
-  a:hover { border-bottom-color: var(--accent-hi); }
-  .app {
-    display: flex; gap: 18px; align-items: center; text-decoration: none; border: 1px solid var(--line);
-    background: var(--card); border-radius: 14px; padding: 18px; transition: border-color .2s;
-  }
-  .app:hover { border-color: var(--accent); }
-  .app.static:hover { border-color: var(--line); }
-  .app div { min-width: 0; }
-  .store-icon { width: 64px; height: 64px; flex: none; padding: 12px; border: 1px solid #2a2a2a; border-radius: 15px; }
-  .app img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
-  .app strong { display: block; color: var(--accent); font-weight: 400; font-size: 1.1rem; }
-  .app span { color: var(--text); font-size: 0.95rem; line-height: 1.5; }
-  .contact { text-align: center; }
-  .contact p { margin: 4px 0; }
-  .contact .entry + .entry { margin-top: 24px; }
-  .contact .person { color: var(--bright); }
-  .contact .label { color: var(--muted); display: inline-block; min-width: 90px; }
-  footer {
-    width: 100%; max-width: 640px; padding: 24px 20px 40px; text-align: center;
-    font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--line);
-  }
-  footer p { margin: 8px 0 0; }
-  .social { display: inline-block; border: 0; padding: 0; color: var(--text); transition: color .2s; }
-  .social:hover { color: var(--accent-hi); }
-  .social svg { display: block; width: 24px; height: 24px; }
-</style>
+<link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <main>
-  <img class="logo" src="logo.svg" alt="Amphoteb" width="1393" height="287">
+  <img class="logo" src="/logo.svg" alt="Amphoteb" width="1393" height="287">
   <p class="tagline">Software for the web, desktop and mobile, plus tech resale.</p>
 
   <h2>Our apps</h2>
   <a class="app" href="https://cardbinder.heymon.gg/">
-    <img src="cardbinder-icon.png" alt="">
+    <img src="/cardbinder-icon.png" alt="">
     <div>
       <strong>Card Binder</strong>
       <span>Snap a photo of a trading card and Card Binder identifies it, files it in a
@@ -85,7 +29,7 @@
   </a>
 
   <h2>Our services</h2>
-  <div class="app static">
+  <a class="app" href="/contact/">
     <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M8.5 7 3.5 12l5 5M15.5 7l5 5-5 5M13.5 5l-3 14"
             fill="none" stroke="#A8A8A8" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
@@ -95,9 +39,9 @@
       <span>We design and build professional websites, desktop software and mobile apps
       tailored to your business. From a clean, fast company website to a full application
       with accounts, payments and cloud data, we take your idea from plan to launch and
-      keep it running smoothly afterwards. Get in touch below to talk about your project.</span>
+      keep it running smoothly afterwards. Tell us about your project and we'll get back to you.</span>
     </div>
-  </div>
+  </a>
 
   <h2>Our store</h2>
   <a class="app" href="https://www.ebay.com/usr/amphotebllc" target="_blank" rel="noopener">
