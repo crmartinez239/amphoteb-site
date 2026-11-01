@@ -19,6 +19,8 @@
     --muted: #6f6f6f;
     --line: #1f1f1f;
     --card: #0b0b0b;
+    --accent: #9b1c31;    /* the logo's maroon */
+    --accent-hi: #c4304a;
   }
   * { box-sizing: border-box; }
   body {
@@ -32,14 +34,19 @@
   h2 {
     font-weight: 300; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;
     color: var(--muted); margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
+    position: relative;
   }
-  a { color: var(--bright); text-decoration: none; border-bottom: 1px solid #444; }
-  a:hover { border-bottom-color: var(--bright); }
+  h2::after {
+    content: ""; position: absolute; left: 0; bottom: -1px; width: 40px; height: 2px; background: var(--accent);
+  }
+  ::selection { background: var(--accent); color: #fff; }
+  a { color: var(--bright); text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
+  a:hover { border-bottom-color: var(--accent-hi); }
   .app {
     display: flex; gap: 18px; align-items: center; text-decoration: none; border: 1px solid var(--line);
     background: var(--card); border-radius: 14px; padding: 18px; transition: border-color .2s;
   }
-  .app:hover { border-color: #3a3a3a; }
+  .app:hover { border-color: var(--accent); }
   .app div { min-width: 0; }
   .store-icon { width: 64px; height: 64px; flex: none; padding: 12px; border: 1px solid #2a2a2a; border-radius: 15px; }
   .app img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
@@ -75,7 +82,7 @@
   <a class="app" href="https://www.ebay.com/usr/amphotebllc" target="_blank" rel="noopener">
     <svg class="store-icon" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M4 9.5 5.5 4h13L20 9.5M4 9.5h16M4 9.5c0 1.4 1.1 2.5 2.5 2.5S9 10.9 9 9.5c0 1.4 1.1 2.5 2.5 2.5h1c1.4 0 2.5-1.1 2.5-2.5 0 1.4 1.1 2.5 2.5 2.5S20 10.9 20 9.5M5.5 12v8h13v-8M10 20v-5h4v5"
-            fill="none" stroke="#A8A8A8" stroke-width="1.3" stroke-linejoin="round" stroke-linecap="round"/>
+            fill="none" stroke="#9B1C31" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
     </svg>
     <div>
       <strong>Amphoteb on eBay</strong>
