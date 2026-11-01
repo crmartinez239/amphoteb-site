@@ -73,11 +73,11 @@ select { appearance: none; background-image: linear-gradient(45deg, transparent 
 input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent-hi); }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 button {
-  justify-self: start; font: inherit; font-weight: 400; font-size: 1rem; letter-spacing: 0.05em; color: #fff;
+  justify-self: center; font: inherit; font-weight: 400; font-size: 1rem; letter-spacing: 0.05em; color: #fff;
   background: var(--accent); border: 0; border-radius: 10px; padding: 12px 28px; cursor: pointer; transition: background .2s;
 }
 button:hover { background: var(--accent-hi); }
 button:disabled { opacity: 0.6; cursor: default; }
-.status { margin: 0; min-height: 1.7em; }
+.status { margin: 0; min-height: 1.7em; text-align: center; }
 .status.error { color: var(--accent-hi); }
 .status.ok { color: var(--bright); }
