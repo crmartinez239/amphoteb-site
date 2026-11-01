@@ -4,39 +4,72 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Amphoteb LLC</title>
-<meta name="description" content="Amphoteb LLC is a software company that makes mobile apps, including Card Binder.">
+<meta name="description" content="Amphoteb LLC is a software company that builds mobile apps, including Card Binder.">
+<meta name="theme-color" content="#000000">
 <style>
-  :root { --bg: #fbf8ff; --text: #1b1b21; --muted: #46464f; --accent: #4f5b92; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #121318; --text: #e4e1e9; --muted: #c6c5d0; --accent: #b8c4ff; }
+  /* Matches the logo: light grey on pure black. */
+  :root {
+    --bg: #000000;
+    --text: #a8a8a8;      /* the logo's grey */
+    --bright: #d9d9d9;    /* headings */
+    --muted: #6f6f6f;
+    --line: #1f1f1f;
+    --card: #0b0b0b;
   }
+  * { box-sizing: border-box; }
   body {
-    margin: 0; min-height: 100vh; display: grid; place-items: center;
-    background: var(--bg); color: var(--text); text-align: center;
-    font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+    font: 300 17px/1.7 "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", sans-serif;
+    display: flex; flex-direction: column; align-items: center;
   }
-  main { max-width: 560px; padding: 32px 20px; }
-  h1 { font-size: 2.2rem; margin: 0 0 4px; }
-  h2 { font-size: 1.2rem; margin: 32px 0 4px; }
-  p { color: var(--muted); margin: 8px 0; }
-  a { color: var(--accent); }
-  footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid rgba(127,127,127,.25); font-size: 0.85rem; color: var(--muted); }
+  main { width: 100%; max-width: 640px; padding: 56px 20px 32px; flex: 1; }
+  .logo { display: block; width: 280px; max-width: 80%; height: auto; margin: 0 auto 8px; }
+  .tagline { text-align: center; letter-spacing: 0.04em; color: var(--text); margin: 0 0 56px; }
+  h2 {
+    font-weight: 300; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--muted); margin: 48px 0 16px; padding-bottom: 10px; border-bottom: 1px solid var(--line);
+  }
+  a { color: var(--bright); text-decoration: none; border-bottom: 1px solid #444; }
+  a:hover { border-bottom-color: var(--bright); }
+  .app {
+    display: flex; gap: 18px; align-items: center; text-decoration: none; border: 1px solid var(--line);
+    background: var(--card); border-radius: 14px; padding: 18px; transition: border-color .2s;
+  }
+  .app:hover { border-color: #3a3a3a; }
+  .app div { min-width: 0; }
+  .app img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
+  .app strong { display: block; color: var(--bright); font-weight: 400; font-size: 1.1rem; }
+  .app span { color: var(--text); font-size: 0.95rem; line-height: 1.5; }
+  .contact p { margin: 4px 0; }
+  .contact .label { color: var(--muted); display: inline-block; min-width: 90px; }
+  footer {
+    width: 100%; max-width: 640px; padding: 24px 20px 40px; text-align: center;
+    font-size: 0.8rem; color: var(--muted); border-top: 1px solid var(--line);
+  }
 </style>
 </head>
 <body>
 <main>
-  <h1>Amphoteb LLC</h1>
-  <p>Amphoteb LLC is a software company that builds mobile apps.</p>
+  <img class="logo" src="logo.png" alt="Amphoteb" width="330" height="150">
+  <p class="tagline">Software and mobile apps.</p>
 
   <h2>Our apps</h2>
-  <p><a href="https://cardbinder.heymon.gg/">Card Binder</a>: snap a photo of a trading card
-  and Card Binder identifies it, files it in a binder and shows what it's worth.</p>
+  <a class="app" href="https://cardbinder.heymon.gg/">
+    <img src="cardbinder-icon.png" alt="">
+    <div>
+      <strong>Card Binder</strong>
+      <span>Snap a photo of a trading card and Card Binder identifies it, files it in a
+      binder and shows what it's worth. With Card Binder Pro, list cards on eBay straight
+      from your collection.</span>
+    </div>
+  </a>
 
   <h2>Contact</h2>
-  <p>General and support: <a href="mailto:support@heymon.gg">support@heymon.gg</a><br>
-  Privacy: <a href="mailto:privacy@heymon.gg">privacy@heymon.gg</a></p>
-
-  <footer>&copy; 2026 Amphoteb LLC. All rights reserved.</footer>
+  <div class="contact">
+    <p><span class="label">Support</span> <a href="mailto:support@heymon.gg">support@heymon.gg</a></p>
+    <p><span class="label">Privacy</span> <a href="mailto:privacy@heymon.gg">privacy@heymon.gg</a></p>
+  </div>
 </main>
+<footer>&copy; 2026 Amphoteb LLC. All rights reserved.</footer>
 </body>
 </html>
