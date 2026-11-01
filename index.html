@@ -7,11 +7,14 @@
 <meta name="description" content="Amphoteb LLC: software for the web, desktop and mobile, plus tech resale.">
 <meta name="theme-color" content="#000000">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  /* Matches the logo: light grey on pure black. */
+  /* Light grey on pure black; the logo itself is maroon. */
   :root {
     --bg: #000000;
-    --text: #a8a8a8;      /* the logo's grey */
+    --text: #a8a8a8;
     --bright: #d9d9d9;    /* headings */
     --muted: #6f6f6f;
     --line: #1f1f1f;
@@ -20,11 +23,11 @@
   * { box-sizing: border-box; }
   body {
     margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
-    font: 300 17px/1.7 "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", sans-serif;
+    font: 300 17px/1.7 "Exo 2", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", sans-serif;
     display: flex; flex-direction: column; align-items: center;
   }
   main { width: 100%; max-width: 640px; padding: 56px 20px 32px; flex: 1; }
-  .logo { display: block; width: 360px; max-width: 80%; height: auto; margin: 0 auto 8px; }
+  .logo { display: block; width: 420px; max-width: 90%; height: auto; margin: 0 auto 12px; }
   .tagline { text-align: center; letter-spacing: 0.04em; color: var(--text); margin: 0 0 56px; }
   h2 {
     font-weight: 300; font-size: 0.8rem; letter-spacing: 0.3em; text-transform: uppercase;
@@ -54,7 +57,7 @@
 </head>
 <body>
 <main>
-  <img class="logo" src="logo.svg" alt="Amphoteb" width="1070" height="325">
+  <img class="logo" src="logo.svg" alt="Amphoteb" width="1393" height="287">
   <p class="tagline">Software for the web, desktop and mobile, plus tech resale.</p>
 
   <h2>Our apps</h2>
