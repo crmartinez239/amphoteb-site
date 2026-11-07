@@ -1,17 +1,25 @@
-/* Light grey on pure black; the logo itself is maroon. */
+/* Deep navy with a teal-to-cyan accent (matches the fox logo). */
 :root {
-  --bg: #000000;
-  --text: #a8a8a8;
-  --bright: #d9d9d9;    /* headings */
-  --muted: #6f6f6f;
-  --line: #1f1f1f;
-  --card: #0b0b0b;
-  --accent: #9b1c31;    /* the logo's maroon */
-  --accent-hi: #c4304a;
+  --bg: #0e1b2c;
+  --bg-end: #16324a;
+  --text: #b4c1ce;
+  --bright: #eef3f8;    /* headings */
+  --muted: #8193a6;
+  --line: #22394f;
+  --card: rgba(255, 255, 255, 0.03);
+  --field: #102236;
+  --accent: #5fd6cf;    /* teal */
+  --accent-hi: #78ead7;
+  --cyan: #39b4cb;
+  --gradient: linear-gradient(135deg, #78ead7, #39b4cb);
+  --error: #ff9b9b;
 }
 * { box-sizing: border-box; }
 body {
-  margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+  margin: 0; min-height: 100vh; color: var(--text);
+  background: radial-gradient(ellipse 60% 40% at 50% 0, rgba(57, 180, 203, 0.14), transparent 70%),
+    linear-gradient(160deg, var(--bg), var(--bg-end)) fixed;
+  background-color: var(--bg);
   font: 300 17px/1.7 "Exo 2", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", sans-serif;
   display: flex; flex-direction: column; align-items: center;
 }
@@ -24,9 +32,9 @@ h2 {
   position: relative;
 }
 h2::after {
-  content: ""; position: absolute; left: 0; bottom: -1px; width: 40px; height: 2px; background: var(--accent);
+  content: ""; position: absolute; left: 0; bottom: -1px; width: 40px; height: 2px; background: var(--gradient);
 }
-::selection { background: var(--accent); color: #fff; }
+::selection { background: var(--accent); color: var(--bg); }
 a { color: var(--bright); text-decoration: none; border-bottom: 2px solid var(--accent); padding-bottom: 1px; }
 a:hover { border-bottom-color: var(--accent-hi); }
 .app {
@@ -35,7 +43,7 @@ a:hover { border-bottom-color: var(--accent-hi); }
 }
 .app:hover { border-color: var(--accent); }
 .app div { min-width: 0; }
-.store-icon { width: 64px; height: 64px; flex: none; padding: 12px; border: 1px solid #2a2a2a; border-radius: 15px; }
+.store-icon { width: 64px; height: 64px; flex: none; padding: 12px; border: 1px solid var(--line); border-radius: 15px; }
 .app img { width: 64px; height: 64px; border-radius: 15px; flex: none; }
 .app strong { display: block; color: var(--accent); font-weight: 400; font-size: 1.1rem; }
 .app span { color: var(--text); font-size: 0.95rem; line-height: 1.5; }
@@ -62,10 +70,10 @@ form { display: grid; gap: 18px; }
 .row { display: grid; gap: 18px; grid-template-columns: 1fr 1fr; }
 @media (max-width: 560px) { .row { grid-template-columns: 1fr; } }
 label { display: block; font-size: 0.85rem; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 6px; }
-label .req { color: var(--accent-hi); }
+label .req { color: var(--accent); }
 input, select, textarea {
-  width: 100%; font: inherit; font-size: 1rem; color: var(--bright); background: var(--card);
-  border: 1px solid #2a2a2a; border-radius: 10px; padding: 11px 13px; transition: border-color .2s;
+  width: 100%; font: inherit; font-size: 1rem; color: var(--bright); background: var(--field);
+  border: 1px solid var(--line); border-radius: 10px; padding: 11px 13px; transition: border-color .2s;
 }
 textarea { min-height: 160px; resize: vertical; line-height: 1.5; }
 select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--text) 50%), linear-gradient(135deg, var(--text) 50%, transparent 50%);
@@ -73,11 +81,11 @@ select { appearance: none; background-image: linear-gradient(45deg, transparent 
 input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent-hi); }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 button {
-  justify-self: center; font: inherit; font-weight: 400; font-size: 1rem; letter-spacing: 0.05em; color: #fff;
-  background: var(--accent); border: 0; border-radius: 10px; padding: 12px 28px; cursor: pointer; transition: background .2s;
+  justify-self: center; font: inherit; font-weight: 400; font-size: 1rem; letter-spacing: 0.05em; color: var(--bg);
+  background: var(--gradient); border: 0; border-radius: 10px; padding: 12px 28px; cursor: pointer; transition: filter .2s;
 }
-button:hover { background: var(--accent-hi); }
+button:hover { filter: brightness(1.1); }
 button:disabled { opacity: 0.6; cursor: default; }
 .status { margin: 0; min-height: 1.7em; text-align: center; }
-.status.error { color: var(--accent-hi); }
+.status.error { color: var(--error); }
 .status.ok { color: var(--bright); }
